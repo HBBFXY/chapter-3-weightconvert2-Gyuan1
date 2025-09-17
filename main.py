@@ -1,10 +1,7 @@
-weight = float(input("请输入重量数值："))
-unit = input("请输入单位（kg 表示千克，lb 表示磅）：")
-if unit == "kg":
-    pound = weight * 2.20462
-    print(f"{weight} 千克 = {pound:.2f} 磅")
-elif unit == "lb":
-    kg = weight / 2.20462
-    print(f"{weight} 磅 = {kg:.2f} 千克")
-else:
-    print("请输入有效的单位（kg 或 lb）")
+current_earth_weight = float(input("请输入您当前的地球体重（kg）："))
+lunar_ratio = 0.165  # 月球重量是地球的16.5%
+print("未来10年地球和月球体重变化：")
+for year in range(1, 11):
+    earth_weight = current_earth_weight + year * 0.5
+    lunar_weight = earth_weight * lunar_ratio
+    print(f"第{year}年：地球体重 {earth_weight:.2f}kg，月球体重 {lunar_weight:.2f}kg")
